@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop watch</title>
+</head>
+<body style="background-color: wheat; text-align: center; margin: 30vh;">
+    <button id="start" style="font-size: 30px; background-color: brown;">start</button>
+    <button id="stop"  style="font-size: 30px; background-color: cadetblue;">stop</button>
+    <button id="resume"  style="font-size: 30px; background-color: pink;">resume</button>
+    <br>
+    <br>
+    <h1 id="time" style="font-size: 90px;">00:00:00</h1>
+    <script>
+        const start= document.getElementById('start');
+        const stop= document.getElementById('stop');
+        const resume= document.getElementById('resume');
+        const time= document.getElementById('time');
+
+        function calc(clicktime){
+            let currenttime= Date.now();
+            let t= (currenttime-clicktime)
+            let hr= Math.floor((t)/(60*60*1000));
+            let rt= t%(60*60*1000)
+            let min= Math.floor(rt/(60*1000));
+            rt%=(60*1000)
+            let sec= Math.floor(rt/(1000));
+            rt%=(1000)
+            return [hr,min,sec];
+        }
+
+        let interval;
+        let elapsedtime;
+        let startclicktime
+
+        //adding eventListener to start,stop,resume
+
+        start.addEventListener('click',()=>{
+            startclicktime=Date.now();
+            interval= setInterval(()=>{
+                const [hr,min,sec]=calc(startclicktime);
+                time.textContent=`${hr}:${min}:${sec}`
+                return time.textContent
+            },1000)
+        })  
+
+        stop.addEventListener('click',()=>{
+            elapsedtime= Date.now()-startclicktime;
+            clearInterval(interval);
+        })
+
+        resume.addEventListener('click',()=>{
+            let resumeclicktime= Date.now()
+            startclicktime=resumeclicktime - elapsedtime
+            interval= setInterval(()=>{
+                const [hr,min,sec]=calc(startclicktime);
+                time.textContent=`${hr}:${min}:${sec}`
+                return time.textContent
+            },1000)
+            
+        })
+    </script>
+</body>
+</html>

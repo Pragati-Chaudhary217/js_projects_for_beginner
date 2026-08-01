@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>UNIVERSITY RAGISTRATION FORM</h1>
+    <P>Please fill the form</P>
+    <hr>
+    <h2>Personal details</h2>
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="txt" name="fname" id="fname" placeholder="e.g. Ram">
+        <br>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="lname" placeholder="e.g. Singh">
+        <br>
+        <label for="dob">DOB:</label>
+        <input type="date" name="dob" id="dob" >
+        <br>
+        <label >Gender</label>
+        <br>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Male</label>
+        <br>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label>
+        <br>
+        <input type="radio" name="gender" id="other" value="other">
+        <label for="other">Other</label>
+        <br>
+        <h3>Upload your photo:</h3>
+        <input type="file" name="file">
+        <br><hr>
+        <h2>Contact Information</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+        <br>
+        <label for="address">Mailing Address:</label>
+        <br>
+        <textarea name="address" id="address" rows="10" cols="10"></textarea>
+        <hr>
+        <h2>Academic Information</h2>
+        <label for="course">Select your course</label>
+        <br>
+        <select name="course" id="course">
+            <option value="CSE">CSE</option>
+            <option value="ME">ME</option>
+            <option value="CE">CE</option>
+            <option value="CHE">CHE</option>
+        </select>
+        <br>
+        <h3>Extra curricular Activities:</h3>
+        <label for="sports">sports</label>
+        <input type="checkbox" id="sports" name="activities" value="sports">
+        <br> 
+        <label for="music">music</label>
+        <input type="checkbox" id="music" name="activities" value="music">
+        <br>
+        <label for="technology clubs">technology clubs</label>
+        <input type="checkbox" id="technololgy clubs" name="activities" value="technology club">
+        <br>
+        <label for="volunteering">volunteering</label>
+        <input type="checkbox" id="volunteering" name="activities" value="volunteering">
+        <hr>
+        <h2>Create your account</h2>
+        <label for="passwd">Create a password:</label>
+        <input type="password" name="password" id="passwd">
+        <br>
+        <label for="security">security question:</label>
+        <select name="security" id="security">
+            <option value="car">Your dream car</option>
+            <option value="birth place">Your place of birth</option>
+            <option value="pet">Your favourite pet</option>
+        </select>
+        <br>
+        <label for="security answer">Security answer:</label>
+        <input type="text" name="security answer" id="security answer">
+        <br><br>
+        <input type="checkbox" id="tandc" name="term and condition">
+        <label for="tandc">I agree to the term and conditions.</label>
+        <br><br>
+        <hr>
+        <button type="submit">Ragister</button>
+        <button type="reset">Clear Form</button>
+    </form>
+</body>
+</html>

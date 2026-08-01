@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+</head>
+<body style="background-color: wheat;">
+    <div style="text-align: center; margin-top: 20vh; font-size: 40px;">
+        <h1> Love Calculator</h1>
+        <label for="boy">Boy Name: </label>
+        <input id="boy" type="text" name="boy" style="height: 30px; padding: 10px; font-size: 40px;">
+        <br><br>
+        <label for="girl">Girl Name: </label>
+        <input id="girl" type="text" name="girl" style="height: 30px; padding: 10px; font-size: 40px;">
+        <br><br>
+        <div >
+             <button id="calc" style="font-size: 100px;">Calculate</button>
+        </div>
+        <h2 id="h2">Result: </h2>
+    </div>
+    <script>
+        const button= document.getElementById('calc');
+        const boy= document.getElementById('boy');
+        const girl= document.getElementById('girl');
+        const r= document.getElementById('h2')
+        button.addEventListener('click',()=>{
+            let v1= boy.value.length;
+            let v2= girl.value.length;
+            let result= (v1/v2)*100;
+            r.textContent= `Result: ${result}%`;
+        })
+
+    </script>
+</body>
+</html>
